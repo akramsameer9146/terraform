@@ -18,3 +18,11 @@ resource "aws_subnet" "tf_subnet" {
     Name = "my-subnet"
   }
 }
+
+resource "aws_internet_gateway" "tf_internet_gateway" {
+  vpc_id = aws_vpc.tf_vpc.id
+
+  tags = {
+    Name = "my-internet-gateway"
+  }
+}
